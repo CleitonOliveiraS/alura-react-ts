@@ -1,10 +1,13 @@
 import React from 'react';
 import style from './Button.module.scss'
 
-function Button (){
+
+
+function Button (props:{type?: "button" | "submit" | "reset" | undefined, onClick?: () => void,children:any}){
+    const {type = "button", onClick} = props;
     return (
-        <button className={style.botao}>
-            Botão
+        <button onClick={onClick} type={type} className={style.botao}>
+            {props.children}
         </button>
     )
 }
